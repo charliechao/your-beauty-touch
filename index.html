@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Beauty Touch | Auckland Beauty Salon</title>
+    <meta name="description"
+        content="Expert beauty services in Auckland. Body shaping, DPL rejuvenation, and more at Your Beauty Touch.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Alex+Brush&family=Italiana&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Floating Icons Styles */
+        .hero-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-icon {
+            position: absolute;
+            color: var(--primary-color);
+            opacity: 0.4;
+            font-size: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+
+        .icon-1 {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            font-size: 2rem;
+        }
+
+        .icon-2 {
+            top: 60%;
+            left: 15%;
+            animation-delay: 1s;
+            font-size: 1.2rem;
+        }
+
+        .icon-3 {
+            top: 30%;
+            right: 12%;
+            animation-delay: 2s;
+            font-size: 1.8rem;
+        }
+
+        .icon-4 {
+            top: 70%;
+            right: 18%;
+            animation-delay: 3s;
+            font-size: 1.4rem;
+        }
+
+        .icon-5 {
+            top: 15%;
+            left: 45%;
+            animation-delay: 4s;
+            font-size: 1rem;
+        }
+
+        .icon-6 {
+            top: 80%;
+            left: 50%;
+            animation-delay: 1.5s;
+            font-size: 1.6rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav">
+            <a href="#hero" class="logo">
+                <img src="img/logo.png" alt="Your Beauty Touch" class="logo-img">
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="mobile-only"><a href="https://www.fresha.com/" class="btn">Book Now</a></li>
+            </ul>
+            <div class="nav-extra">
+                <a href="tel:0273158637" class="nav-phone"><i class="fas fa-phone-alt"></i></a>
+                <a href="https://www.fresha.com/" class="btn desktop-only">Book Now</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS Initialization
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <section id="hero" class="hero">
+        <video autoplay muted loop playsinline id="hero-video">
+            <source src="mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source src="facial.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-shapes">
+            <i class="fas fa-spa floating-icon icon-1"></i>
+            <i class="fas fa-leaf floating-icon icon-2"></i>
+            <i class="fas fa-heart floating-icon icon-3"></i>
+            <i class="fas fa-star floating-icon icon-4"></i>
+            <i class="fas fa-magic floating-icon icon-5"></i>
+            <i class="fas fa-spa floating-icon icon-6"></i>
+        </div>
+        <div class="container hero-content">
+            <h1 data-aos="fade-up" data-aos-delay="200">Expert Beauty Care in Auckland</h1>
+            <p data-aos="fade-up" data-aos-delay="400">Experience premium beauty treatments tailored to your needs. From
+                body shaping to advanced skin rejuvenation.</p>
+            <a href="#services" class="btn" data-aos="fade-up" data-aos-delay="600">Discover Services</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our Fantastic Services</h2>
+                <p>Advanced treatments for a radiant, youthful look.</p>
+            </div>
+
+            <div class="service-detail" data-aos="fade-right">
+                <h3>Body shaping on freezing fat (cryolipolysis)</h3>
+                <p>The outstanding feature of fat cell removal is that fat bulges are targeted using a spray of cooling
+                    treatment. Gradually the fat cells are eliminated over a two to four month period. The procedure
+                    reduces fat in a chosen, targeted part of the body, such as the love handles, back, stomach, or
+                    bottom. This method does not require surgery, there is no anesthesia, no needles, no cuts, and it
+                    only targets fat cells without harming the skin or any other tissue.</p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/ztT1t7ZRUCQ"
+                        title="Your Beauty Touch - Body Shaping" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="pricing-list">
+                    <ul>
+                        <li><strong>A: handle (the biggest) treatment area</strong> - $118</li>
+                        <li><strong>B: handle (the second) treatment area</strong> - $108</li>
+                        <li><strong>C: handle (the third) treatment area</strong> - $98</li>
+                        <li><strong>D: handle (the smallest) treatment area</strong> - $58</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="services-grid" style="margin-top: 50px;">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-magic"></i>
+                    <h3>DPL Skin Rejuvenation</h3>
+                    <p>DPL with precise 500nm - 610nm narrowband light can produce photothermal effect, penetrate deep
+                        into the skin, and stimulate the rearrangement of collagen fibers.</p>
+                    <div class="price">Face: $150 | Face + Neck: $180</div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-tint"></i>
+                    <h3>DPL Vascular Therapy</h3>
+                    <p>Effectively treats superficial vascular lesions, such as spider veins or diffuse redness, by
+                        coagulating capillary blood vessels.</p>
+                    <div class="price">Face: $80</div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-sun"></i>
+                    <h3>DPL Pigment Therapy</h3>
+                    <p>Targets and eliminates various pigment markers like freckles or age spots using a wide-range
+                        spectrum.</p>
+                    <div class="price">Face: $80 - $120</div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-leaf"></i>
+                    <h3>DPL Acne Treatment</h3>
+                    <p>Eliminates active inflammation, stimulates deep healing, and reduces the appearance of scarring
+                        gradually.</p>
+                    <div class="price">Face: $80 - $100</div>
+                </div>
+            </div>
+
+            <div class="service-detail" style="margin-top: 50px;">
+                <h3>DPL Hair Removal</h3>
+                <p>Safe and effective hair removal for various body areas.</p>
+                <div class="pricing-list">
+                    <ul>
+                        <li><strong>Arms:</strong> $118</li>
+                        <li><strong>Underarm:</strong> $58</li>
+                        <li><strong>Legs:</strong> $150 - $180</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+
+                <a href="https://www.fresha.com/" class="btn" style="margin-top: 20px;">Booking Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="img/about.png" alt="About Your Beauty Touch">
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <div class="section-title" style="text-align: left; margin-bottom: 30px;">
+                        <h2>About Your Beauty Touch</h2>
+                        <p>Our passion for perfection defines your beauty experience.</p>
+                    </div>
+                    <p>At Your Beauty Touch, we believe that true beauty comes from balanced care and professional
+                        expertise. Located in the heart of Auckland, our salon is a haven for those seeking
+                        transformative results in a serene, luxurious environment.</p>
+
+                    <ul class="about-features" style="margin-top: 30px;">
+                        <li>
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Certified Expertise</h4>
+                                <p>Our therapists are highly trained in advanced technologies like DPL and
+                                    Cryolipolysis.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <h4>Personalized Care</h4>
+                                <p>We tailor every treatment to your unique skin type and body goals for optimal
+                                    results.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-spa"></i>
+                            <div>
+                                <h4>Premium Environment</h4>
+                                <p>Relax and rejuvenate in our state-of-the-art facility designed for your comfort.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Visit us or send a message for inquiries.</p>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-form" data-aos="fade-right">
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="db61f3bc-c597-4ab3-be76-2c98071a026a">
+                        <!-- Honeypot Anti-Spam Field -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="map-container" data-aos="fade-left">
+                    <!-- Google Map for Ellerslie Salon -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.771515524647!2d174.8247658!3d-36.89581390000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d491ab1bfb18f%3A0xd86f339e373f5108!2s1%2F27%20Ballarat%20Street%2C%20Ellerslie%2C%20Auckland%201051!5e0!3m2!1sen!2snz!4v1767856770225!5m2!1sen!2snz"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--secondary-color); color: var(--white); padding: 50px 0; text-align: center;">
+        <div class="container">
+            <div class="footer-logo-container">
+                <img src="img/logo.png" alt="Your Beauty Touch" class="footer-logo">
+            </div>
+
+            <div class="footer-contact" style="margin-bottom: 30px;">
+                <p style="margin: 5px 0;"><i class="fas fa-envelope"
+                        style="color: var(--primary-color); margin-right: 10px;"></i> <a
+                        href="mailto:sunnylily5196@gmail.com"
+                        style="color: var(--white); text-decoration: none;">sunnylily5196@gmail.com</a></p>
+                <p style="margin: 5px 0;"><i class="fas fa-phone-alt"
+                        style="color: var(--primary-color); margin-right: 10px;"></i> <a href="tel:0273158637"
+                        style="color: var(--white); text-decoration: none;">027 315 8637</a></p>
+                <p style="margin: 5px 0;"><i class="fab fa-weixin"
+                        style="color: var(--primary-color); margin-right: 10px;"></i> WeChat ID: sunnyside96605</p>
+            </div>
+
+            <p>&copy; <span id="current-year"></span> Your Beauty Touch Auckland. All Rights Reserved. Website by <a
+                    href="http://www.kiwiwebdesign.co.nz" target="_blank"
+                    style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Kiwi Web Design</a>
+            </p>
+            <script>
+                document.getElementById('current-year').textContent = new Date().getFullYear();
+            </script>
+            <div class="social-links" style="margin-top: 20px;">
+                <a href="#" style="color: var(--white); margin: 0 10px; font-size: 1.5rem;"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="#" style="color: var(--white); margin: 0 10px; font-size: 1.5rem;"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
