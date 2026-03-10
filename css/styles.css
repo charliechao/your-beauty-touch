@@ -311,7 +311,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(191, 171, 156, 0.5);
+    /* #bfab9c with 50% opacity */
     /* Overlay for better text visibility */
     z-index: 0;
 }
@@ -626,6 +627,54 @@ section {
     font-weight: 700;
     color: var(--primary-color);
     margin-top: 15px;
+}
+
+/* Nail Gallery Carousel */
+.nail-swiper {
+    width: 100%;
+    padding: 20px 0 50px 0;
+    /* Space for pagination */
+}
+
+.gallery-item {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nail-swiper .swiper-pagination-bullet-active {
+    background-color: var(--primary-color);
+}
+
+.nail-swiper .swiper-button-next,
+.nail-swiper .swiper-button-prev {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.8);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nail-swiper .swiper-button-next::after,
+.nail-swiper .swiper-button-prev::after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nail-swiper .swiper-button-next:hover,
+.nail-swiper .swiper-button-prev:hover {
+    background: var(--white);
+    transform: scale(1.1);
 }
 
 /* Animations */
