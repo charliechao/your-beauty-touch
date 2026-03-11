@@ -6,7 +6,8 @@
     --accent-color: #ff8ec7;
     /* Lighter Pink */
     --text-color: #2c2c2c;
-    --light-bg: #fdfdfd;
+    --light-bg: rgba(191, 171, 156, 0.2);
+    /* 20% opacity of #bfab9c */
     --white: #ffffff;
     --transition: all 0.3s ease;
 }
@@ -488,7 +489,7 @@ section {
 
 /* About Section */
 .about-section {
-    background: #fff;
+    background: transparent;
     padding: 100px 0;
 }
 
@@ -548,7 +549,7 @@ section {
 
 /* Contact & Map */
 .contact-section {
-    background: #f9f9f9;
+    background: transparent;
 }
 
 .contact-wrapper {
