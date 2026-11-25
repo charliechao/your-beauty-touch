@@ -292,14 +292,32 @@ header {
     color: var(--white);
     padding-top: 80px;
     overflow: hidden;
-    /* Keeps the video (z-index: -1) above the hero's own background */
+    /* Keeps the video and placeholder (z-index: -1) inside the hero */
     isolation: isolate;
 }
 
-/* Placeholder shown on mobile until the hero video is ready */
+/* Mobile placeholder: covers the video until it is really playing, so it
+   stays visible in browsers that can't play or draw the video */
+.hero-placeholder {
+    display: none;
+}
+
 @media (max-width: 768px) {
-    .hero {
+    .hero-placeholder {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background: #c9a09b url('../img/hero-mobile.webp') center / cover no-repeat;
+        z-index: -1;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .hero.video-playing .hero-placeholder {
+        opacity: 0;
     }
 }
 

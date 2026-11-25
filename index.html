@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=2">
 
     <style>
         /* Floating Icons Styles */
@@ -190,6 +190,32 @@
             <source src="facial.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <!-- Must stay after the video so it paints on top of it -->
+        <div class="hero-placeholder" aria-hidden="true"></div>
+        <script>
+            (function () {
+                var hero = document.getElementById('hero');
+                var video = document.getElementById('hero-video');
+
+                // WeChat's built-in browser can't be relied on for background video: phones keep the image
+                if (/MicroMessenger/i.test(navigator.userAgent) && window.matchMedia('(max-width: 768px)').matches) {
+                    video.pause();
+                    video.removeAttribute('autoplay');
+                    while (video.firstChild) video.removeChild(video.firstChild);
+                    video.load(); // stops the download
+                    hero.removeChild(video);
+                    return;
+                }
+
+                // Reveal the video only once playback is actually advancing
+                video.addEventListener('timeupdate', function reveal() {
+                    if (video.currentTime > 0) {
+                        hero.classList.add('video-playing');
+                        video.removeEventListener('timeupdate', reveal);
+                    }
+                });
+            })();
+        </script>
         <div class="hero-shapes">
             <i class="fas fa-spa floating-icon icon-1"></i>
             <i class="fas fa-leaf floating-icon icon-2"></i>
