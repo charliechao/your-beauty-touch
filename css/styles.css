@@ -292,6 +292,15 @@ header {
     color: var(--white);
     padding-top: 80px;
     overflow: hidden;
+    /* Keeps the video (z-index: -1) above the hero's own background */
+    isolation: isolate;
+}
+
+/* Placeholder shown on mobile until the hero video is ready */
+@media (max-width: 768px) {
+    .hero {
+        background: #c9a09b url('../img/hero-mobile.webp') center / cover no-repeat;
+    }
 }
 
 #hero-video {
